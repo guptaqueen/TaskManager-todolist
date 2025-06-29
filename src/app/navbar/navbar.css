@@ -1,3 +1,17 @@
 .custom-navbar{
   background-color: rgb(101, 146, 244)!important;
 }
+
+mat-toolbar{
+  position: relative;
+  z-index: 5;
+  background-color: rgb(211, 208, 208);
+}
+
+mat-sidenav-container{
+  height:89vh;
+}
+
+mat-sidenav-content{
+  padding: 20px;
+}

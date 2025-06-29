@@ -6,12 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a routerLink="/login" routerLinkActive="active" class="nav-link active" aria-current="page" href="#">Login</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/logout" routerLinkActive="active" class="nav-link" href="#">LogOut</a>
-        </li>
+       
         <li class="nav-item">
           <a routerLink="/todolist" routerLinkActive="active" class="nav-link" href="#">ToDo List</a>
         </li>
@@ -27,5 +22,33 @@
 </nav>
 
 
+<mat-toolbar  >
+ <mat-toolbar-row>
+  <button mat-icon-button (click)="sidenav.toggle();">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1>Angular</h1>
+ </mat-toolbar-row>
+</mat-toolbar>
 
 
+<mat-sidenav-container>
+ 
+  <mat-sidenav  [style.backgroundColor]="'#e3f2fd'" #sidenav opened mode="side" [style.width]="'200px'">
+     
+    <mat-nav-list>
+<!-- <a mat-list-item>Home</a>
+<a mat-list-item>Partners</a> -->
+@for(item of menuItems; track $index){
+  <a mat-list-item [routerLink]="item.route">
+    <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+    <span>{{item.label}}</span>
+  </a>
+}
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content >
+   <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

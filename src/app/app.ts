@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
 import { Todolist } from './todolist/todolist';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Navbar } from './navbar/navbar';
-import { Login } from './login/login';
-import { Logout } from './logout/logout';
+
 
 
 @Component({
@@ -19,8 +18,8 @@ import { Logout } from './logout/logout';
     Navbar,
     RouterLink,
     RouterLinkActive,
-    Login,
-    Logout,],
+  
+  RouterModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
