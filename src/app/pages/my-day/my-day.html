@@ -38,7 +38,7 @@
   <thead>
     <tr>
       <th scope="col">Task</th>
-      <th scope="col">Completed</th>
+      <th scope="col">Important</th>
       <th scope="col">Delete</th>
       <th scope="col">Date</th>
     </tr>
@@ -47,8 +47,8 @@
 
     <tr *ngFor="let t of taskArray; index as i">
       <td>{{t.taskName}}</td>
-      <td><input (change)="onCheck(i)" id="mycheckbox" type="checkbox" ></td>
-      
+      <td><input (change)="onCheck(i)" id="mycheckbox" type="checkbox"  ></td>
+
       <td><button class="btn btn-danger btn-sm" (click)="onDelete(i)" >Delete</button></td>
 
 <td>{{ t.date | date: 'mediumDate' }}</td>

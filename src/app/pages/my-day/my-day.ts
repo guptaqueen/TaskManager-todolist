@@ -41,5 +41,7 @@ onCheck(index:number){
   console.log(this.taskArray);
 
   this.taskArray[index].isCompleted=!this.taskArray[index].isCompleted;
+  
+  
 }
 }
