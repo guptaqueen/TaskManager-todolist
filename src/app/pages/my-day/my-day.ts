@@ -7,8 +7,9 @@ import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
+import { OnInit } from '@angular/core';
 
-import { Sharedtask } from '../../sharedtask';
+import { Sharedtask,Task } from '../../sharedtask';
 
 @Component({
   selector: 'app-my-day',
@@ -26,13 +27,15 @@ import { Sharedtask } from '../../sharedtask';
   templateUrl: './my-day.html',
   styleUrl: './my-day.css',
 })
-export class MyDay {
-  // taskArray: any[] = [];
+export class MyDay   implements OnInit{ 
+ taskArray: any[] = [];
 
   constructor(public taskService: Sharedtask) {}
 
-   taskArray = [{taskName:'Brush teeth',isCompleted:true,date: new Date()}];
-    
+  //  taskArray = [{taskName:'Brush teeth',isCompleted:true,date: new Date()}];
+  ngOnInit(): void {
+    this.taskArray = this.taskService.getAllTasks();
+  }
 
   onSubmit(form: NgForm) {
     //  const taskValue = form.value;
@@ -67,6 +70,8 @@ export class MyDay {
     // console.log(this.taskArray);
     // this.taskArray[index].isCompleted=!this.taskArray[index].isCompleted;
     const task = this.taskArray[index];
-    this.taskService.markAsImportant(task);
+    task.important = !task.important;
+      this.taskService.updateImportantStatus(task);
+    // this.taskService.markAsImportant(task);
   }
 }
