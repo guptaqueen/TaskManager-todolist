@@ -4,7 +4,7 @@ import { Todolist } from './todolist/todolist';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Navbar } from './navbar/navbar';
-
+import { MyDay } from './pages/my-day/my-day';
 
 
 @Component({

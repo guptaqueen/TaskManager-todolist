@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Servicecount } from './servicecount';
+import { Sharedtask } from './sharedtask';
 
-describe('Servicecount', () => {
-  let service: Servicecount;
+describe('Sharedtask', () => {
+  let service: Sharedtask;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(Servicecount);
+    service = TestBed.inject(Sharedtask);
   });
 
   it('should be created', () => {

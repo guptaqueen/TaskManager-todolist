@@ -1,2 +1,9 @@
 
 <app-my-day></app-my-day>
+
+<h2>Important Tasks</h2>
+<ul>
+  <li *ngFor="let task of importantTasks">
+    {{ task.taskName }} ({{ task.date | date: 'mediumDate' }})
+  </li>
+</ul>
